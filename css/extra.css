@@ -1,0 +1,8 @@
+.borderless {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.img-center {
+margin:0 auto !important;
+}
