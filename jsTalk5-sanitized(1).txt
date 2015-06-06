@@ -1,0 +1,685 @@
+AngularJS (+ JS things to know) 
+6/5/15 
+
+
+The Goal of this talk 
+
+2 
+
+[Tagline or Section Name] 
+
+Ben Nadal’s learning curve 
+A possible learning curve 
+Important JavaScript libraries history 
+3 [Tagline or Section Name] 
+
+jQuery 
+(2006) 
+
+KnockoutJS 
+(2010) 
+
+Backbone.js 
+(2010) 
+
+Ember.js 
+(2011) 
+AngularJS 
+(2010*) 
+Important JavaScript libraries Google Trends 
+4 [Tagline or Section Name] 
+
+
+AngularJS Summary 
+
+.AngularJS in 2 lines: 
+–uses MVVM Architecture 
+–to create Single Page Applications (SPA) . 
+
+
+
+
+5 
+
+[Tagline or Section Name] 
+SPA 
+.What 
+–fits on a single web “page” (is “page” a good word choice?) 
+–provides a more fluid user experience 
+
+
+.Where 
+–Gmail (!) 
+–Our Job Application flow 
+–Our ‘Mobile Enabled’ site 
+
+
+.Detecting SPA’s 
+–Url Hashtags (Not always since HTML5 ) 
+–When navigating between ‘pages’ (screens), Developer tools (F12) doesn’t clear it’s 
+tab (In network and console tabs). 
+
+
+
+
+6 [Tagline or Section Name] 
+
+
+SPA 
+
+7 [Tagline or Section Name] 
+
+A common jQuery Practice (show/hide) How most Angular directives work 
+MVVM 
+8 [Tagline or Section Name] 
+
+(Magic) 
+
+
+AngularJS Summary, revisited 
+.AngularJS in 2 lines: 
+–uses MVVM Architecture 
+–to create Single Page Applications (SPA) . 
+
+
+.But Why MVVM is a good Architecture to create SPA’s? 
+–Shopping cart example 
+–Performance analysis purchasable boosts list. 
+
+
+
+
+9 [Tagline or Section Name] 
+AngularJS Prior Knowledge 
+.Some of the hard parts when learning AngularJS, might not have to be due to 
+Angular at all, but pure JS. 
+.Consider this quote from an Angular anti-patterns : 
+–“the prototype chain will not need to be consulted to determine the value of foo if 
+foo is not an Object or Array”. 
+–But what is the prototype chain? 
+
+
+
+
+10 
+
+[Tagline or Section Name] 
+
+
+JS Basics 
+11 Proposed Solution 
+Closures 
+Hoisting 
+Revealing Module Pattern 
+Prototypal inheritance 
+
+Data Querying 
+
+“this” keyword caution 
+Promises / Futures 
+Async. ‘versus’ Threading 
+ECMAScript versions 
+truthy / falsy 
+Strict mode 
+IIFE 
+
+Scopes 
+
+strict equality 
+JAVASCRIPT 
+PATTERNS 
+DYNAMIC, FUNCTIONAL 
+call() , apply() , bind() 
+Constructor Pattern 
+Motivations 
+
+Decoupled Server side development from Client side development 
+
+12 [Tagline or Section Name] 
+<ul> 
+@foreach (var item in Model.FooList) 
+{ 
+<li> 
+@Html.DisplayFor(m=>item.fooName) 
+</li> 
+} 
+</ul> 
+Rendering with .Net Razor Rendering with Angular directives 
+<ul> 
+<li data-ng-repeat=“item in vm.fooList"> 
+{{item.fooName}} 
+</li> 
+</ul> 
+In 2013 Groupon switched from Ruby On Rails to NodeJS 
+
+In 2010 Twitter started to switch from Ruby On Rails to Scala(JAVA) 
+
+
+Motivations 
+
+13 [Tagline or Section Name] 
+Decouple Application From It’s Data 
+‘Classical’ Server Side MVC 
+Lkjsadfkjlsdfkj 
+sdfkjsdf sdkfj 
+sdfk jsd fksjdf 
+sklja 
+Lkjsadfkjlsdfkj 
+sdfkjsdf sdkfj 
+sdfk jsd fksjdf 
+sklja 
+
+
+Lkjsadfkjlsdfkj 
+sdfkjsdf sdkfj 
+sdfk jsd fksjdf 
+sklja 
+
+ 
+
+Lkjsadfkjlsdfkj 
+sdfkjsdf sdkfj 
+sdfk jsd fksjdf 
+sklja 
+
+ 
+Lkjsadfkjlsdfkj 
+sdfkjsdf sdkfj 
+sdfk jsd fksjdf 
+sklja 
+Lkjsadfkjlsdfkj 
+sdfkjsdf sdkfj 
+sdfk jsd fksjdf 
+sklja 
+Client side Single Page Application 
+(SPA) 
+page
+page 
+page
+Presentaion &
+
+
+Logic
+
+
+Data 
+(API)
+
+
+{ 
+model1: {} 
+… 
+} 
+SPA example link 
+Twitter: “…trend of shifting rendering code into 
+browser-based JavaScript, and, in so doing, it 
+ceased to gain much benefit from Rails' 
+templating model for building web pages…” () 
+Motivations 
+Decouple UI from Client Logic (Readbility) 
+14 [Tagline or Section Name] 
+
+Show / Hide with jQuery 
+
+Show / Hide with AngularJS 
+HTML: 
+<div id=“say_hello”> 
+HELLO 
+</div> 
+JS: 
+if (condition1) {$(‘#say_hello’).hide(); } 
+if (condition2) {$(‘#say_hello’).show(); } 
+HTML: 
+<div id=“say_hello” ng-show=“vm.showHello”> 
+HELLO 
+</div> 
+JS: 
+if (condition1) {$scope.vm.showHello=false;} 
+if (condition2) {$scope.vm.showHello=true;} 
+In the jQuery version, every html element is potentially 
+manipulated in a ‘code behind’ JavaScript. Reading the mark up 
+doesn’t give a clue which elements are static, dynamic and in what 
+conditions. 
+Development Cycles (Opinionated!) 
+contract changes 
+(server API) 
+Update Server 
+mock in client 
+code 
+
+Develop client 
+against mock till 
+reaching a working 
+application 
+
+Switch back to 
+server from mock, 
+verifying a working 
+application 
+A Bug Occurs 
+Trying to reproduce 
+bug against the 
+mock 
+Bug does reproduce 
+Client Bug- the client 
+programmers must 
+have inserted a 
+change that caused 
+a regression. 
+NOTBug does 
+reproduce 
+Server Bug- server 
+does not respect the 
+contract 
+
+
+Digging into JS 
+
+.Before looking at some code, let’s sync on 2 topics for the JS appendix: 
+–Promises 
+–Revealing module pattern 
+
+
+
+
+17 [Tagline or Section Name] 
+Note on Angular Services (module/singletons) 
+18 [Tagline or Section Name] 
+Provider 
+
+Factory 
+
+Service 
+Performance Analysis Design 
+19 [Tagline or Section Name] 
+Resources 
+20 [Tagline or Section Name] 
+
+AngularJS 
+Resource 
+
+Pros 
+
+Cons 
+
+A complete book 
+covering a lot of 
+angular features. 
+A Big book. 
+
+Excellent Topics are 
+unordered, hence 
+this cannot be a 
+starting point 
+
+Anti-Patterns (, ) 
+
+An angular coding 
+style that increases 
+readability 
+
+Highly opinionated 
+
+
+
+
+Resources 
+
+21 [Tagline or Section Name] 
+JavaScript 
+
+Resource 
+
+Pros 
+
+Cons 
+
+Runs through all of 
+JS features. 
+In some pages, 
+author goes into 
+unpractical depths. 
+
+ 
+
+ 
+
+Free, from the 
+authors site. 
+
+This presentation 
+(JS appendix) 
+May serve as a 
+quick short cut for 
+“javascript: the 
+good parts”. 
+
+
+
+
+JAVASCRIPT APPENDIX 
+22 [Tagline or Section Name] 
+HOISTING 
+23 
+
+[Tagline or Section Name] 
+
+Is there a difference in the output between left and right? 
+var sayHello = function (){alert(‘HELLO’);}; 
+sayHello(); 
+function sayHello (){alert(‘HELLO’);} 
+sayHello(); 
+sayHello(); 
+var sayHello = function (){alert(‘HELLO’);} 
+sayHello(); 
+function sayHello (){alert(‘HELLO’);} 
+And now? ( only line order changed) 
+At script time, declaration are hoisted to the top. 
+
+Hoisting can be used to create more readable code (see the Revealing Module Pattern) 
+
+
+Strict Mode 
+
+24 [Tagline or Section Name] 
+Why Strict Mode? (from ): 
+Strict mode makes it easier to write "secure" JavaScript. 
+Strict mode changes previously accepted "bad syntax" into real errors. 
+It is a best practice to add ‘use strict’; At the top of each .js file 
+invoked function expression)-ImmediatelyIIFE ( 
+25 [Tagline or Section Name] 
+
+(function (){ 
+
+ 
+
+// code… 
+
+// 
+
+ 
+
+})(); 
+
+ 
+
+Example 
+IIFE creates a new scope, and hence it is a best practice to wrap the contents 
+of each .js file with an IIFE (see also ) 
+
+Scopes 
+26 [Tagline or Section Name] 
+In javascript, only functions create variable scopes 
+function loopAround(){ 
+
+ 
+
+ for (var i=0; i<10; i++) 
+
+ { 
+
+ console.log(i); 
+
+ } 
+
+console.log(‘the value of i:’ + i); 
+
+} 
+
+function loopAround(){ 
+
+ var i; 
+
+ for (i=0; i<10; i++) 
+
+ { 
+
+ console.log(i); 
+
+ } 
+
+console.log(‘the value of i:’ + i); 
+
+} 
+
+In the left box, the for loop did not create a scope, and therefore the ‘i’ variable can be 
+accessed outside of the loop. 
+The right box exhibits a coding style that emphasizing the scope of ‘i’ . This style could 
+help prevent bugs. 
+)1‘this’ keyword caution (slide 
+27 [Tagline or Section Name] 
+The javascript ‘this’ keyword can be misleading and lead to bugs (find the bug below) 
+window.badCart = new function () 
+
+{ 
+
+ 
+
+ this.items = []; 
+
+ 
+
+ function count() 
+
+ { 
+
+ return this.items.length; 
+
+ } 
+
+ 
+
+ this.add = function (item) 
+
+ { 
+
+ this.items.push(item); 
+
+ 
+
+ } 
+
+ 
+
+ this.printItems = function () 
+
+ { 
+
+ var i = 0; 
+
+ 
+
+ for (i = 0; i < count() ; i++) 
+
+ { 
+
+ console.log(this.items[i].name) 
+
+ } 
+
+ } 
+
+ 
+
+
+
+ 
+
+window.badCart.add( 
+
+ 
+
+ id: 
+
+ price: 
+
+ name: 'product1' 
+
+ 
+
+ 
+
+
+
+ 
+
+window.badCart.printItems(); 
+
+Continued: 
+)2‘this’ keyword caution (slide 
+28 [Tagline or Section Name] 
+When creating modules, it is best and easy to avoid using the ‘this’ keyword entirely 
+(see revealing module pattern). 
+When creating simple constructor functions, that only hold properties, it is safe to use 
+‘this’. e.g- when creating a mock for a JSON object that is returned from the server side. 
+Truthy / Falsy 
+29 
+
+[Tagline or Section Name] 
+
+Note- in some cases the expression at the left box will evaluate to true while at the right box 
+it will evaluate to false (think why). 
+However- in 99% of the cases, these can be safely substituted. 
+value evaluate to false:6 These 
+False 0 (zero) "" (empty string) null undefined NaN (Not a Number) 
+All the rest evaluate to true 
+if (typeof window.foo != 'undefined‘) 
+{ 
+// do something 
+} 
+if (window.foo) 
+{ 
+// do something 
+} 
+JS with type flavors (.NET?) Just JS 
+Data Querying 
+
+30 
+
+[Tagline or Section Name] 
+from cust in customers 
+select cust.name; 
+from cust in customers 
+where cust.City == "London" 
+select cust; 
+customers.map(function(cust){ 
+return cust.name }); 
+customers.filter(function(cust){ 
+return cust.City == ‘London’; }) ; 
+C# LINQ JS (on Arrays) 
+See also – 
+Selecting 
+
+filtering 
+
+
+ECMAScript Versions 
+31 [Tagline or Section Name] 
+).8features (no go for ie5 Use ECMAScript 
+, check ‘show obsolete browsers’. From that table, we can infer that using ECMAScript 5 
+features is safe if we drop support for ie8. 
+More on es5: 
+dictionairy = { … }; 
+for (var key in dictionary) { 
+if (object.hasOwnProperty(property)) { 
+// do stuff 
+} 
+} 
+Iterating over ‘Dictionary’ (object) with ‘ES3’ 
+
+Iterating over ‘Dictionary’ (object) with ES5 
+
+dictionairy = { … }; 
+for (var property in Object.keys(dictionary)) 
+{ 
+// do stuff 
+} 
+
+Revealing Module Pattern 
+32 [Tagline or Section Name] 
+Revealing Module Pattern 
+window.Cart = new function () 
+{ 
+this.items = []; 
+this.add = function (item) 
+{ 
+this.items.push(item); 
+} 
+this.printItems = function () 
+{ 
+var i = 0; 
+for (i = 0; i < count() ; i++) 
+{ 
+console.log(this.items[i].name) 
+} 
+} 
+}; 
+window.Cart = (function () 
+
+{ 
+
+ var items = []; 
+
+ 
+
+ return { 
+
+add: add, 
+
+printItems: printItems, 
+
+getItems: getItems 
+
+} 
+
+ 
+
+ function add(item){ 
+
+ items.push(item); 
+
+ } 
+
+ 
+
+ function printItems (){ 
+
+ var i = 0; 
+
+ for (i = 0; i < count() ; i++) 
+
+ { 
+
+ console.log(items[i].name) 
+
+ } 
+
+ } 
+
+ 
+
+ function getItems(){ 
+
+ return items; 
+
+ } 
+
+ 
+
+})(); 
+
+Constructor mesh up 
+
+
+Promises Pattern 
+33 [Tagline or Section Name] 
+Observer Pattern 
+.Useful pattern to synchronize async programming. 
+.What’s the difference between promises and 
+The observer pattern? 
+Observer event: “onTempetureChanged” 
+Promise ‘event’: “hasItRainedSince2003 “ 
+.Angular uses the $q sign to handle promises. 
+
+
+
