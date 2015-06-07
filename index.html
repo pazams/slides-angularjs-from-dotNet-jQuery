@@ -200,10 +200,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
                     Web apps <span class="fragment">&#8776; Authenticated users</span>  <span class="fragment"> (<b>GMAIL</b>) </span>
                     </li>
                     <li class="fragment"> 
-                    <a href="http://www.apress.com/9781430264484">  Adam Freeman's </a> graph: 
+                    <a href="http://www.apress.com/9781430264484">  Adam Freeman's </a> graph: (but complexity where?!)
                     </li>
 
-            <img src="media/c11.png" class=" img-center borderless fragment"> 
+                    <img src="media/c11.png" class=" img-center borderless fragment"> 
+                    <br />
 
                 </ul>
             </section>
@@ -479,30 +480,109 @@ if (condition2) {$scope.vm.showHello=true;}
 
         <section>
             <h2>
-                Promises/Futures
+                Promises / Futures
             </h2>
-            <img src="media/c21.png" class=" img-center borderless"> 
+            <ul>
+                <li class="fragment">
+                Observer pattern: &nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="media/c21.png" class=" img-center borderless"> 
+                <br />
+                Subscriber A's callback will get called for 7 events 
+                <br />
+                Subscriber B's callback will get called for 2 events 
+                </li>
+                <li class="fragment">
+                Promises pattern:  &nbsp;&nbsp;&nbsp;&nbsp;    
+                <img src="media/c22.png" class=" img-center borderless"> 
+                <br />
+                Subscriber A's callback will get called for when the promise resolves
+                <br />
+                Subscriber B's callback will get called for when the promise resolves
+                </li>
+            </ul>
         </section>
 
-
+<section>
         <section>
             <h2>
                 Revealing module pattern 
             </h2>
-        </section>
+                <pre><code data-trim contenteditable class="js" >
 
+window.Cart = (function ()
+{
+    var items = [];
+
+    return {
+add: add,
+printItems: printItems,
+getItems: getItems
+}
+
+    function add(item){
+        items.push(item);
+    }
+
+    function printItems (){
+        var i = 0;
+        for (i = 0; i < count() ; i++)
+        {
+            console.log(items[i].name)
+        }
+    }
+
+    function getItems(){
+	return items;
+    }
+
+})();
+ 
+                </code></pre>
+
+        </section>
+ <section>
+            <h2>
+Constructor mesh up
+            </h2>
+                <pre><code data-trim contenteditable class="js" >
+ 
+window.Cart = new function ()
+{
+
+    this.items = [];
+
+    this.add = function (item)
+    {
+        this.items.push(item);
+
+    }
+
+    this.printItems = function ()
+    {
+        var i = 0;
+        for (i = 0; i < count() ; i++)
+        {
+            console.log(this.items[i].name)
+        }
+    }
+};
+
+                </code></pre>
+
+        </section>
+</section>
     </div>
 
-                        </div>
+</div>
 
-                        <script src="lib/js/head.min.js"></script>
-                        <script src="js/reveal.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-                        <script>
+<script>
 
 // Full list of configuration options available at:
 // https://github.com/hakimel/reveal.js#configuration
-                        Reveal.initialize({
+Reveal.initialize({
 controls: true,
 progress: true,
 history: true,
@@ -529,7 +609,7 @@ dependencies: [
     ]
     });
 
-                        </script>
+</script>
 
-                        </body>
-                        </html>
+</body>
+</html>
