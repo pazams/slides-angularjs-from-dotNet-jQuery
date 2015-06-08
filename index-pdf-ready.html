@@ -180,46 +180,44 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <h2>
                 SPA
             </h2>
-            <section>
-                <h3>What</h3>
-                <ul class="pull-left">
-                    <li class="fragment"> 
-                    fits on a single web “page” (is “page” a good word choice?) 
-                    </li>
-                    <li class="fragment">
-                    provides a more fluid user experience
-                    </li>
-                </ul>
+            <h3>What</h3>
+            <ul class="pull-left">
+                <li class="fragment"> 
+                fits on a single web “page” (is “page” a good word choice?) 
+                </li>
+                <li class="fragment">
+                provides a more fluid user experience
+                </li>
+            </ul>
 
 
-            </section>
-            <section>
-                <h3>Where</h3>
-                <ul class="pull-left">
-                    <li class="fragment"> 
-                    Web apps <span class="fragment">&#8776; Authenticated users</span>  <span class="fragment"> (<b>GMAIL</b>) </span>
-                    </li>
-                    <li class="fragment"> 
-                    <a href="http://www.apress.com/9781430264484">  Adam Freeman's </a> graph: (but complexity where?!)
-                    </li>
+        </section>
+        <section>
+            <h3>Where</h3>
+            <ul class="pull-left">
+                <li class="fragment"> 
+                Web apps <span class="fragment">&#8776; Authenticated users</span>  <span class="fragment"> (<b>GMAIL</b>) </span>
+                </li>
+                <li class="fragment"> 
+                <a href="http://www.apress.com/9781430264484">  Adam Freeman's </a> graph: (but complexity where?!)
+                </li>
 
-                    <img src="media/c11.png" class=" img-center borderless fragment"> 
-                    <br />
+                <img src="media/c11.png" class=" img-center borderless fragment"> 
+                <br />
 
-                </ul>
-            </section>
-            <section>
-                <h3>Detection</h3>
-                <ul class="pull-left">
-                    <li class="fragment"> 
-                    Url Hashtags, i.e. ".../#sent" (not mendatory since HTML5 'pushState')
-                    </li>
-                    <li class="fragment">
-                    When navigating between ‘pages’ (screens), Developer tools (F12) network tab doesn't clear
-                    </li>
-                </ul>
+            </ul>
+        </section>
+        <section>
+            <h3>Detection</h3>
+            <ul class="pull-left">
+                <li class="fragment"> 
+                Url Hashtags, i.e. ".../#sent" (not mendatory since HTML5 'pushState')
+                </li>
+                <li class="fragment">
+                When navigating between ‘pages’ (screens), Developer tools (F12) network tab doesn't clear
+                </li>
+            </ul>
 
-            </section>
         </section>
 
 
@@ -280,9 +278,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <h4>
                 Benefits- Decoupled Server from Client side development 
             </h4>
-            <section>
-                <h4>Rendering with .Net Razor</h4>
-                <pre><code data-trim contenteditable class="html">
+            <h4>Rendering with .Net Razor</h4>
+            <pre><code data-trim contenteditable class="html">
 <ul> 
 @foreach (var item in Model.FooList) 
 { 
@@ -291,11 +288,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 </li> 
 } 
 </ul>
-                </code></pre>
-            </section>
-            <section>
-                <h4>Rendering with Angular </h4>
-                <pre><code data-trim contenteditable class="html" >
+            </code></pre>
+        </section>
+        <section>
+            <h4>Rendering with Angular </h4>
+            <pre><code data-trim contenteditable class="html" >
 <ul> 
 
 <li data-ng-repeat="item in vm.fooList"> 
@@ -303,18 +300,17 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 </li> 
 
 </ul>
-                </code></pre>
-            </section>
-            <section>
-                <ul>
-                    <li class="fragment">
-                    In 2013 Groupon switched server side technologies 
-                    </li>
-                    <li class="fragment">
-                    In 2010 Twitter started to switch it's server side technologies 
-                    </li>
-                </ul>
-            </section>
+            </code></pre>
+        </section>
+        <section>
+            <ul>
+                <li class="fragment">
+                In 2013 Groupon switched server side technologies 
+                </li>
+                <li class="fragment">
+                In 2010 Twitter started to switch it's server side technologies 
+                </li>
+            </ul>
         </section>
 
 
@@ -344,53 +340,50 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
 
 
-
         <section>
             <h4>
                 Benefits- Decouple UI from Client Logic
             </h4>
-            <section>
-                <h4>
-                    Show / Hide with jQuery 
-                </h4>
-                HTML:
-                <pre><code data-trim contenteditable class="html">
+            <h4>
+                Show / Hide with jQuery 
+            </h4>
+            HTML:
+            <pre><code data-trim contenteditable class="html">
 <div id="say_hello">
 HELLO 
 </div> 
-                </code></pre>
-                JS:
-                <pre><code data-trim contenteditable class="js">
+            </code></pre>
+            JS:
+            <pre><code data-trim contenteditable class="js">
 if (condition1) {$('#say_hello').hide(); } 
 if (condition2) {$('#say_hello').show(); } 
-                </code></pre>
-            </section>
-            <section>
-                <h4>
-                    Show / Hide with AngularJS 
-                </h4>
-                HTML:
-                <pre><code data-trim contenteditable class="html">
+            </code></pre>
+        </section>
+        <section>
+            <h4>
+                Show / Hide with AngularJS 
+            </h4>
+            HTML:
+            <pre><code data-trim contenteditable class="html">
 <div id="say_hello" ng-show="vm.showHello"> 
 HELLO 
 </div> 
-                </code></pre>
-                JS:
-                <pre><code data-trim contenteditable class="js">
+            </code></pre>
+            JS:
+            <pre><code data-trim contenteditable class="js">
 if (condition1) {$scope.vm.showHello=false;} 
 if (condition2) {$scope.vm.showHello=true;} 
-                </code></pre>
-            </section>
+            </code></pre>
+        </section>
 
-            <section>
-                In the jQuery version, every html element is potentially 
-                manipulated in a "code behind" JavaScript. Reading the mark up 
-                doesn't give a clue which elements are static, dynamic and in what 
-                conditions.
-
-            </section>
+        <section>
+            In the jQuery version, every html element is potentially 
+            manipulated in a "code behind" JavaScript. Reading the mark up 
+            doesn't give a clue which elements are static, dynamic and in what 
+            conditions.
 
         </section>
+
 
 
         <section>
@@ -404,7 +397,6 @@ if (condition2) {$scope.vm.showHello=true;}
         <section>
             <h2>Development cycles (opinionated)</h2> 
 
-            <section>
                 <img src="media/c5.png" class=" img-center borderless"> 
             </section>
 
@@ -412,97 +404,95 @@ if (condition2) {$scope.vm.showHello=true;}
                 <h4>a bug occurs</h4>
                 <img src="media/c6.png" class=" img-center borderless"> 
             </section>
-        </section>
 
 
-        <section>
-            <h2>
-                Distributing Proccessing
-            </h2>
-            <h3> Considerations </h3>
-            <ul>
-                <li class="fragment">
-                Working with sensitive data (dates)
-                </li>
-                <li class="fragment">
-                Micro optimization(source of all evil)
-                </li>
-                <li class="fragment">
-                Code reuse (api, multiple client applications). 
-                </li>
-                <li class="fragment">
-                Development simplicity
-                </li>
-                <li class="fragment">
-                Code decoupling
-                </li>
+            <section>
+                <h2>
+                    Distributing Proccessing
+                </h2>
+                <h3> Considerations </h3>
+                <ul>
+                    <li class="fragment">
+                    Working with sensitive data (dates)
+                    </li>
+                    <li class="fragment">
+                    Micro optimization(source of all evil)
+                    </li>
+                    <li class="fragment">
+                    Code reuse (api, multiple client applications). 
+                    </li>
+                    <li class="fragment">
+                    Development simplicity
+                    </li>
+                    <li class="fragment">
+                    Code decoupling
+                    </li>
 
-            </ul>
-        </section>
+                </ul>
+            </section>
 
-        <section>
-            <h2>
-                Prerequisite knowledge? 
-            </h2>
-            <br >
-            <br >
-            <p>
-            Consider this quote from an Angular anti-patterns <a href="http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/" >article</a>:
-            </p>
-            <blockquote cite="http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/">
-                &ldquo; the prototype chain will not need to be consulted to determine the value of foo if foo is not an Object or Array &rdquo;
-            </blockquote>
-
-
-            <br >
-            <br >
-
-            <h3> 
-                But what is the prototype chain?
-            </h3>
-        </section>
-
-        <section>
-            <h2>
-                Prerequisite knowledge? 
-            </h2>
-            <img src="media/c4.png" class=" img-center borderless"> 
-        </section>
+            <section>
+                <h2>
+                    Prerequisite knowledge? 
+                </h2>
+                <br >
+                <br >
+                <p>
+                Consider this quote from an Angular anti-patterns <a href="http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/" >article</a>:
+                </p>
+                <blockquote cite="http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/">
+                    &ldquo; the prototype chain will not need to be consulted to determine the value of foo if foo is not an Object or Array &rdquo;
+                </blockquote>
 
 
+                <br >
+                <br >
 
-        <section>
-            <h2>
-                JS APPENDIX 
-            </h2>
-        </section>
+                <h3> 
+                    But what is the prototype chain?
+                </h3>
+            </section>
+
+            <section>
+                <h2>
+                    Prerequisite knowledge? 
+                </h2>
+                <img src="media/c4.png" class=" img-center borderless"> 
+            </section>
 
 
-        <section>
-            <h2>
-                Promises / Futures
-            </h2>
-            <ul>
-                <li class="fragment">
-                Observer pattern: &nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="media/c21.png" class=" img-center borderless"> 
-                <br />
-                Subscriber A's callback will get called for 7 events 
-                <br />
-                Subscriber B's callback will get called for 2 events 
-                </li>
-                <li class="fragment">
-                Promises pattern:  &nbsp;&nbsp;&nbsp;&nbsp;    
-                <img src="media/c22.png" class=" img-center borderless"> 
-                <br />
-                Subscriber A's callback will get called for when the promise resolves
-                <br />
-                Subscriber B's callback will get called for when the promise resolves
-                </li>
-            </ul>
-        </section>
 
-        <section>
+            <section>
+                <h2>
+                    JS APPENDIX 
+                </h2>
+            </section>
+
+
+            <section>
+                <h2>
+                    Promises / Futures
+                </h2>
+                <ul>
+                    <li class="fragment">
+                    Observer pattern: &nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="media/c21.png" class=" img-center borderless"> 
+                    <br />
+                    Subscriber A's callback will get called for 7 events 
+                    <br />
+                    Subscriber B's callback will get called for 2 events 
+                    </li>
+                    <li class="fragment">
+                    Promises pattern:  &nbsp;&nbsp;&nbsp;&nbsp;    
+                    <img src="media/c22.png" class=" img-center borderless"> 
+                    <br />
+                    Subscriber A's callback will get called for when the promise resolves
+                    <br />
+                    Subscriber B's callback will get called for when the promise resolves
+                    </li>
+                </ul>
+            </section>
+
             <section>
                 <h2>
                     Revealing module pattern 
@@ -570,205 +560,204 @@ window.Cart = new function ()
                 </code></pre>
 
             </section>
-        </section>
 
-        <section>
-            <h2>
-                AngularJS Resources
-            </h2>
+            <section>
+                <h2>
+                    AngularJS Resources
+                </h2>
 
-            <table>
-                <thead>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Pros</th>
+                            <th>Cons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <tr>
-                        <th>Resource</th>
-                        <th>Pros</th>
-                        <th>Cons</th>
+                        <td>
+                            <a href="http://www.apress.com/9781430264484"> Pro Angular JS </a>
+                        </td>
+
+                        <td>
+                            A complete book 
+                        </td>
+                        <td>
+                            A big book
+                        </td>
+
                     </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <a href="http://www.apress.com/9781430264484"> Pro Angular JS </a>
-                    </td>
 
-                    <td>
-                        A complete book 
-                    </td>
-                    <td>
-                        A big book
-                    </td>
-
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href=" https://docs.angularjs.org/api"> Official docs</a>
-                    </td>
-
-                    <td>
-                        Best reference
-                    </td>
-
-                    <td>
-                        Unordered 
-                    </td>
-
-
-                </tr>
-                <tr>
-                    <td>
-                        Anti-Patterns (<a href=" http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/">1</a>, <a href="https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make">2</a> )
-                    </td>
-
-                    <td>
-                    </td>
-
-                    <td>
-                    </td>
-
-
-                </tr>
-
-
-                <tr>
-                    <td>
-                        <a href="https://github.com/johnpapa/angular-styleguide">
-                            John Papa’s style guide
-                        </a>
-                    </td>
-
-                    <td>
-                        Coding style for readability
-                    </td>
-
-                    <td>
-                        Highly opinionated
-                    </td>
-
-
-
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="http://www.slideshare.net/mobile/spederiva/tips-for-angular-applications">
-                            Some tips
-                        </a>
-                    </td>
-
-                    <td>
-
-                    </td>
-
-
-                    <td>
-                        <a href="http://stackoverflow.com/a/19616605"> slide 12 reject </a>
-                        <br >
-
-                        <a href="http://stackoverflow.com/questions/21869283/when-to-favor-ng-if-vs-ng-show-ng-hide"> slide 19 reject </a>
-                    </td>
-
-
-                </tr>
-
-                <tr>
-                    <td>
-                        <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">
-                            Free course @codeschool
-                        </a>
-                    </td>
-
-                    <td>
-
-                    </td>
-
-
-                    <td>
-                    </td>
-
-
-                </tr>
-
-                </tbody>
-
-            </table>
-
-
-
-        </section>
-
-  <section>
-            <h2>
-                Javascript Resources
-            </h2>
-
-            <table>
-                <thead>
                     <tr>
-                        <th>Resource</th>
-                        <th>Pros</th>
-                        <th>Cons</th>
+                        <td>
+                            <a href=" https://docs.angularjs.org/api"> Official docs</a>
+                        </td>
+
+                        <td>
+                            Best reference
+                        </td>
+
+                        <td>
+                            Unordered 
+                        </td>
+
+
                     </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
+                    <tr>
+                        <td>
+                            Anti-Patterns (<a href=" http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/">1</a>, <a href="https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make">2</a> )
+                        </td>
 
-                        <a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742" >JavaScript:  The Good Parts</a>
+                        <td>
+                        </td>
 
-                    </td>
-                    <td>
-All time classic
-                    </td>
-                    <td>
-2008 - doesn't include ECMAS 5
-                    </td>
-
-                </tr>       
-  <tr>
-                    <td>
-
-                        <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" >
-Learning JavaScript Design Patterns
-                        </a>
-
-                    </td>
-                    <td>
-Free Ebook by genious Addy Osmani
-                    </td>
-                    <td>
-                    </td>
-
-                </tr>       
-
- <tr>
-                    <td>
-
-A small powerpoint summary 
-
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-Seperate file by Email
-                    </td>
-
-                </tr>       
+                        <td>
+                        </td>
 
 
-    </div>
+                    </tr>
 
-</div>
 
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.js"></script>
+                    <tr>
+                        <td>
+                            <a href="https://github.com/johnpapa/angular-styleguide">
+                                John Papa’s style guide
+                            </a>
+                        </td>
 
-<script>
+                        <td>
+                            Coding style for readability
+                        </td>
+
+                        <td>
+                            Highly opinionated
+                        </td>
+
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="http://www.slideshare.net/mobile/spederiva/tips-for-angular-applications">
+                                Some tips
+                            </a>
+                        </td>
+
+                        <td>
+
+                        </td>
+
+
+                        <td>
+                            <a href="http://stackoverflow.com/a/19616605"> slide 12 reject </a>
+                            <br >
+
+                            <a href="http://stackoverflow.com/questions/21869283/when-to-favor-ng-if-vs-ng-show-ng-hide"> slide 19 reject </a>
+                        </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">
+                                Free course @codeschool
+                            </a>
+                        </td>
+
+                        <td>
+
+                        </td>
+
+
+                        <td>
+                        </td>
+
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+
+
+            </section>
+
+            <section>
+                <h2>
+                    Javascript Resources
+                </h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Pros</th>
+                            <th>Cons</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+
+                            <a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742" >JavaScript:  The Good Parts</a>
+
+                        </td>
+                        <td>
+                            All time classic
+                        </td>
+                        <td>
+                            2008 - doesn't include ECMAS 5
+                        </td>
+
+                    </tr>       
+                    <tr>
+                        <td>
+
+                            <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" >
+                                Learning JavaScript Design Patterns
+                            </a>
+
+                        </td>
+                        <td>
+                            Free Ebook by genious Addy Osmani
+                        </td>
+                        <td>
+                        </td>
+
+                    </tr>       
+
+                    <tr>
+                        <td>
+
+                            A small powerpoint summary 
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            Seperate file by Email
+                        </td>
+
+                    </tr>       
+
+
+                </div>
+
+            </div>
+
+            <script src="lib/js/head.min.js"></script>
+            <script src="js/reveal.js"></script>
+
+            <script>
 
 // Full list of configuration options available at:
 // https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
+            Reveal.initialize({
 controls: true,
 progress: true,
 history: true,
@@ -795,7 +784,7 @@ dependencies: [
     ]
     });
 
-</script>
+            </script>
 
-</body>
-</html>
+            </body>
+            </html>
