@@ -1,52 +1,801 @@
 <!doctype html>
-<html>
-	<head>
+<html lang="en">
 
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>reveal.js - The HTML Presentations Framework</title>
+<head>
+<meta charset="utf-8">
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/main.css">
+<title>slides on angularJS</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="slides on angularJS, with references to .Net and jQuery">
+<meta name="author" content="Pazams">
 
-		<!--[if lt IE 9]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	</head>
-	<body>
-		<div class="wrapper">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-			<header>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/black.css" id="theme">
+<link rel="stylesheet" href="css/extra.css"> 
 
-				<h1>reveal.js</h1>
-				<p>
-					The HTML Presentation Framework &mdash; Site coming soon
-				</p>
+<!-- Code syntax highlighting -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+slides-angularjs-from-dotNet-jQuery
+<!-- Printing and PDF exports -->
+<script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
 
-			</header>
+<!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
 
-			<footer>
+<body>
 
-				<p>
-					<a href="http://lab.hakim.se/reveal-js">Try the demo</a>
-					<a href="https://github.com/hakimel/reveal.js/releases">Download</a>
-				</p>
+<div class="reveal">
 
-			</footer>
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>AngularJS</h1>
+            <h4> (+ JS things to know) </h4>
+            <h3>with references to .Net and Jquery</h3>
+            <p>
+            <small>Created by <a href="https://github.com/pazams/slides-angularjs-from-dotNet-jQuery">Pazams</a>  </small>
+            </p>
+            <p>
+            <small>
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
+                <a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
+            </small>
+            </p> 
+        </section>
 
-		</div>
+        <section>
+            <h2>The goal of this talk</h2>  
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 fragment">
+                        <h4>Ben Nadal’s learning curve</h4>
+                        <img src="media/image8.png" class="img-center borderless">                
+                    </div>
+                    <div class="col-xs-6 fragment">
+                        <h4>A possible learning curve</h4>
+                        <img src="media/image9.png" width="545px" height="563px" class="img-center borderless"> 
+                    </div>
+                </div>
+            </div>
 
-		  ga('create', 'UA-43375306-1', 'revealjs.com');
-		  ga('send', 'pageview');
-		</script>
-	</body>
+
+        </section>
+
+        <section>
+            <h2>Some JS libraries history</h2> 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Apples</td>
+                    <td>jQuery</td>
+                    <td>2006</td>
+                </tr>
+                <tr>
+                    <td rowspan="4" style="vertical-align: middle;">Oranges</td>
+                    <td>KnockoutJS</td>
+                    <td>2010</td>
+                </tr>
+                <tr>
+                    <td>Backbone.js</td>
+                    <td>2010</td>
+                </tr>  
+                <tr>
+                    <td>Ember.js</td>
+                    <td>2011</td>
+                </tr>
+                <tr>
+                    <td>AngularJS</td>
+                    <td>2010*</td>
+                </tr>
+
+                <tr class="fragment">
+                    <td>Bananas</td>
+                    <td>React.js</td>
+                    <td>2013</td>
+                </tr>
+
+
+
+                <tr class="fragment">
+                    <td rowspan="3"  style="vertical-align: middle; "> Futuristic</td>
+                    <td>Web Components</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fragment">
+                    <td>Polymer</td>
+                    <td>-</td>
+                </tr>
+                <tr class="fragment">
+                    <td>Angular 2.0</td>
+                    <td>-</td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+        </section>
+
+        <section>
+            <h2>Some JS libraries history</h2> 
+            <img src="media/Selection_001.png" class="img-center borderless">                
+        </section>
+
+        <section>
+            <h3>AngularJS in 3 lines</h3>
+            <ul class="pull-left"> 
+                <li class="fragment" >uses MVVM Architecture</li>
+                <li class="fragment" >to create Single page applications (<b>SPA</b>)</li>
+                <li class="fragment" >while enjoying design benefits</li>
+            </ul>
+            <div class="clearfix"></div>
+            <br/> <br/>
+            <div class="fragment" >
+                <h3>It's also packed with features</h3>
+                <ul class="pull-left">
+                    <li class="fragment">dependency injection</li>
+                    <li class="fragment">routing</li>
+                    <li class="fragment">CSS3 animations</li>
+                    <li class="fragment">and more</li>
+                </ul>
+                <div class="clearfix"></div>
+            </div> 
+
+
+
+        </section>
+
+        <section>
+            <h2>
+                SPA
+            </h2>
+            <section>
+                <h3>What</h3>
+                <ul class="pull-left">
+                    <li class="fragment"> 
+                    fits on a single web “page” (is “page” a good word choice?) 
+                    </li>
+                    <li class="fragment">
+                    provides a more fluid user experience
+                    </li>
+                </ul>
+
+
+            </section>
+            <section>
+                <h3>Where</h3>
+                <ul class="pull-left">
+                    <li class="fragment"> 
+                    Web apps <span class="fragment">&#8776; Authenticated users</span>  <span class="fragment"> (<b>GMAIL</b>) </span>
+                    </li>
+                    <li class="fragment"> 
+                    <a href="http://www.apress.com/9781430264484">  Adam Freeman's </a> graph: (but complexity where?!)
+                    </li>
+
+                    <img src="media/c11.png" class=" img-center borderless fragment"> 
+                    <br />
+
+                </ul>
+            </section>
+            <section>
+                <h3>Detection</h3>
+                <ul class="pull-left">
+                    <li class="fragment"> 
+                    Url Hashtags, i.e. ".../#sent" (not mendatory since HTML5 'pushState')
+                    </li>
+                    <li class="fragment">
+                    When navigating between ‘pages’ (screens), Developer tools (F12) network tab doesn't clear
+                    </li>
+                </ul>
+
+            </section>
+        </section>
+
+
+        <section>
+            <h2>
+                SPA
+            </h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 fragment">
+                        <h4>A common jQuery Practice (show/hide)</h4>
+                        <img src="media/c2.png" class="img-center borderless">                
+                    </div>
+                    <div class="col-xs-6 fragment">
+                        <h4>How most Angular directives work</h4>
+                        <img src="media/c1.png" class=" img-center borderless"> 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>
+                MVVM 
+            </h2>
+            <a href="http://plnkr.co/edit/NkYEcNsYOvwF1bgdfTIT?p=preview"> Basic data binding example </a>
+            <br />
+            HTML:
+            <pre><code data-trim contenteditable class="html">
+            <input ng-model='vm.greeting'>
+            <p>
+            {{vm.greeting}}
+            </p>
+            </code></pre>
+            JS:
+            <pre><code data-trim contenteditable class="js">
+   $scope.vm = {
+        greeting: 'Hello'
+      };
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>
+                MVVM 
+            </h2>
+            <img src="media/c3.png" class=" img-center borderless"> 
+        </section>
+
+        <section>
+            <h2>
+                But Why MVVM is a good Architecture to create SPA's?
+            </h2>
+        </section>
+
+
+        <section>
+            <h4>
+                Benefits- Decoupled Server from Client side development 
+            </h4>
+            <section>
+                <h4>Rendering with .Net Razor</h4>
+                <pre><code data-trim contenteditable class="html">
+<ul> 
+@foreach (var item in Model.FooList) 
+{ 
+<li> 
+@Html.DisplayFor(m=>item.fooName) 
+</li> 
+} 
+</ul>
+                </code></pre>
+            </section>
+            <section>
+                <h4>Rendering with Angular </h4>
+                <pre><code data-trim contenteditable class="html" >
+<ul> 
+
+<li data-ng-repeat="item in vm.fooList"> 
+{{item.fooName}} 
+</li> 
+
+</ul>
+                </code></pre>
+            </section>
+            <section>
+                <ul>
+                    <li class="fragment">
+                    In 2013 Groupon switched server side technologies 
+                    </li>
+                    <li class="fragment">
+                    In 2010 Twitter started to switch it's server side technologies 
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+
+
+
+        <section>
+            <h4>
+                Benefits- Decouple Application From It's Data 
+            </h4>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 fragment">
+                        <h4>
+                            Classical Server Side MVC 
+                        </h4>
+                        <img src="media/c9.png" class="img-center borderless">                
+                    </div>
+                    <div class="col-xs-6 fragment">
+                        <h4>
+                            Client side SPA
+                        </h4>
+                        <img src="media/c82.png" class=" img-center borderless"> 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section>
+            <h4>
+                Benefits- Decouple UI from Client Logic
+            </h4>
+            <section>
+                <h4>
+                    Show / Hide with jQuery 
+                </h4>
+                HTML:
+                <pre><code data-trim contenteditable class="html">
+<div id="say_hello">
+HELLO 
+</div> 
+                </code></pre>
+                JS:
+                <pre><code data-trim contenteditable class="js">
+if (condition1) {$('#say_hello').hide(); } 
+if (condition2) {$('#say_hello').show(); } 
+                </code></pre>
+            </section>
+            <section>
+                <h4>
+                    Show / Hide with AngularJS 
+                </h4>
+                HTML:
+                <pre><code data-trim contenteditable class="html">
+<div id="say_hello" ng-show="vm.showHello"> 
+HELLO 
+</div> 
+                </code></pre>
+                JS:
+                <pre><code data-trim contenteditable class="js">
+if (condition1) {$scope.vm.showHello=false;} 
+if (condition2) {$scope.vm.showHello=true;} 
+                </code></pre>
+            </section>
+
+            <section>
+                In the jQuery version, every html element is potentially 
+                manipulated in a "code behind" JavaScript. Reading the mark up 
+                doesn't give a clue which elements are static, dynamic and in what 
+                conditions.
+
+            </section>
+
+        </section>
+
+
+        <section>
+            <h2>
+                Angular building blocks 
+            </h2>
+            <img src="media/c10_2.png" class=" img-center borderless"> 
+        </section>
+
+
+        <section>
+            <h2>Development cycles (opinionated)</h2> 
+
+            <section>
+                <img src="media/c5.png" class=" img-center borderless"> 
+            </section>
+
+            <section>
+                <h4>a bug occurs</h4>
+                <img src="media/c6.png" class=" img-center borderless"> 
+            </section>
+        </section>
+
+
+        <section>
+            <h2>
+                Distributing Proccessing
+            </h2>
+            <h3> Considerations </h3>
+            <ul>
+                <li class="fragment">
+                Working with sensitive data (dates)
+                </li>
+                <li class="fragment">
+                Micro optimization(source of all evil)
+                </li>
+                <li class="fragment">
+                Code reuse (api, multiple client applications). 
+                </li>
+                <li class="fragment">
+                Development simplicity
+                </li>
+                <li class="fragment">
+                Code decoupling
+                </li>
+
+            </ul>
+        </section>
+
+        <section>
+            <h2>
+                Prerequisite knowledge? 
+            </h2>
+            <br >
+            <br >
+            <p>
+            Consider this quote from an Angular anti-patterns <a href="http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/" >article</a>:
+            </p>
+            <blockquote cite="http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/">
+                &ldquo; the prototype chain will not need to be consulted to determine the value of foo if foo is not an Object or Array &rdquo;
+            </blockquote>
+
+
+            <br >
+            <br >
+
+            <h3> 
+                But what is the prototype chain?
+            </h3>
+        </section>
+
+        <section>
+            <h2>
+                Prerequisite knowledge? 
+            </h2>
+            <img src="media/c4.png" class=" img-center borderless"> 
+        </section>
+
+
+
+        <section>
+            <h2>
+                JS APPENDIX 
+            </h2>
+        </section>
+
+
+        <section>
+            <h2>
+                Promises / Futures
+            </h2>
+            <ul>
+                <li class="fragment">
+                Observer pattern: &nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="media/c21.png" class=" img-center borderless"> 
+                <br />
+                Subscriber A's callback will get called for 7 events 
+                <br />
+                Subscriber B's callback will get called for 2 events 
+                </li>
+                <li class="fragment">
+                Promises pattern:  &nbsp;&nbsp;&nbsp;&nbsp;    
+                <img src="media/c22.png" class=" img-center borderless"> 
+                <br />
+                Subscriber A's callback will get called for when the promise resolves
+                <br />
+                Subscriber B's callback will get called for when the promise resolves
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h2>
+                    Revealing module pattern 
+                </h2>
+                <pre><code data-trim contenteditable class="js" >
+
+window.Cart = (function ()
+{
+    var items = [];
+
+    return {
+add: add,
+printItems: printItems,
+getItems: getItems
+}
+
+    function add(item){
+        items.push(item);
+    }
+
+    function printItems (){
+        var i = 0;
+        for (i = 0; i < count() ; i++)
+        {
+            console.log(items[i].name)
+        }
+    }
+
+    function getItems(){
+    return items;
+    }
+
+})();
+
+                </code></pre>
+
+            </section>
+            <section>
+                <h2>
+                    Constructor mesh up
+                </h2>
+                <pre><code data-trim contenteditable class="js" >
+
+window.Cart = new function ()
+{
+
+    this.items = [];
+
+    this.add = function (item)
+    {
+        this.items.push(item);
+
+    }
+
+    this.printItems = function ()
+    {
+        var i = 0;
+        for (i = 0; i < count() ; i++)
+        {
+            console.log(this.items[i].name)
+        }
+    }
+};
+
+                </code></pre>
+
+            </section>
+        </section>
+
+        <section>
+            <h2>
+                AngularJS Resources
+            </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Resource</th>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a href="http://www.apress.com/9781430264484"> Pro Angular JS </a>
+                    </td>
+
+                    <td>
+                        A complete book 
+                    </td>
+                    <td>
+                        A big book
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href=" https://docs.angularjs.org/api"> Official docs</a>
+                    </td>
+
+                    <td>
+                        Best reference
+                    </td>
+
+                    <td>
+                        Unordered 
+                    </td>
+
+
+                </tr>
+                <tr>
+                    <td>
+                        Anti-Patterns (<a href=" http://nathanleclaire.com/blog/2014/04/19/5-angularjs-antipatterns-and-pitfalls/">1</a>, <a href="https://www.airpair.com/angularjs/posts/top-10-mistakes-angularjs-developers-make">2</a> )
+                    </td>
+
+                    <td>
+                    </td>
+
+                    <td>
+                    </td>
+
+
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <a href="https://github.com/johnpapa/angular-styleguide">
+                            John Papa’s style guide
+                        </a>
+                    </td>
+
+                    <td>
+                        Coding style for readability
+                    </td>
+
+                    <td>
+                        Highly opinionated
+                    </td>
+
+
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="http://www.slideshare.net/mobile/spederiva/tips-for-angular-applications">
+                            Some tips
+                        </a>
+                    </td>
+
+                    <td>
+
+                    </td>
+
+
+                    <td>
+                        <a href="http://stackoverflow.com/a/19616605"> slide 12 reject </a>
+                        <br >
+
+                        <a href="http://stackoverflow.com/questions/21869283/when-to-favor-ng-if-vs-ng-show-ng-hide"> slide 19 reject </a>
+                    </td>
+
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <a href="https://www.codeschool.com/courses/shaping-up-with-angular-js">
+                            Free course @codeschool
+                        </a>
+                    </td>
+
+                    <td>
+
+                    </td>
+
+
+                    <td>
+                    </td>
+
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+
+
+        </section>
+
+  <section>
+            <h2>
+                Javascript Resources
+            </h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Resource</th>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+
+                        <a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742" >JavaScript:  The Good Parts</a>
+
+                    </td>
+                    <td>
+All time classic
+                    </td>
+                    <td>
+2008 - doesn't include ECMAS 5
+                    </td>
+
+                </tr>       
+  <tr>
+                    <td>
+
+                        <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" >
+Learning JavaScript Design Patterns
+                        </a>
+
+                    </td>
+                    <td>
+Free Ebook by genious Addy Osmani
+                    </td>
+                    <td>
+                    </td>
+
+                </tr>       
+
+ <tr>
+                    <td>
+
+A small powerpoint summary 
+
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+Seperate file by Email
+                    </td>
+
+                </tr>       
+
+
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+controls: true,
+progress: true,
+history: true,
+center: true,
+
+width: '100%',
+// height: '100%',
+
+// width: '1366',
+height: '768',
+
+
+transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+// Optional reveal.js plugins
+dependencies: [
+{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+{ src: 'plugin/zoom-js/zoom.js', async: true },
+{ src: 'plugin/notes/notes.js', async: true },
+
+    ]
+    });
+
+</script>
+
+</body>
 </html>

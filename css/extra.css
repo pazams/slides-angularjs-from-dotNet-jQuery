@@ -1,0 +1,19 @@
+.borderless {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.img-center {
+margin:0 auto !important;
+}
+
+.reveal pre {
+font-size: 1em;
+}
+
+
+.container {
+margin: 0 auto !important;
+}
+
+
